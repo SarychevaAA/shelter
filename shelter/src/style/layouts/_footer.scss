@@ -1,0 +1,91 @@
+.footer{
+  background: #211F20;
+  background: url("../../img/background.png"), linear-gradient(-60deg, $background-footer-gradient-stop,#211F20, $background-gradient-start 80%) ;
+  .wrapper{
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 160px;
+    @include media-content{
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: calc(80px + (160 - 80) * ((100vw - 1180px)/(1280 - 1180)));
+      padding-top: calc(30px + (40 - 30) * ((100vw - 768px)/(1280 - 768)));
+      @include media-laptop{
+        justify-content: center;
+        row-gap: 65px;
+        column-gap: 60px;
+        @include media-between-tablet-mobile{
+          row-gap: 40px;
+        }
+      }
+    }
+    @include media-tablet-small{
+      padding-top: 30px;
+    }
+  }
+}
+
+.footer-information-block{
+  margin: 0;
+  color: $color-primary;
+  display: flex;
+  flex-direction: column;
+}
+.footer-information-block__header{
+  color: $color-light-xl;
+  margin: 16.6px 0 0;
+  @include media-laptop{
+    margin-top: 0;
+  }
+  @include media-mobile{
+    text-align: center;
+    align-self: center;
+    width: 90%;
+  }
+}
+.footer__connection{
+  width: 280px;
+  gap: 40px;
+  @include media-mobile{
+    align-items: center;
+  }
+}
+.footer__location{
+  width: 300px;
+  gap: 32px;
+  @include media-mobile{
+    gap: 40px;
+  }
+}
+.footer__img{
+  @include media-tablet-small {
+    margin-top: -2px;
+    width: calc(260px + (300 - 260) * ((100vw - 320px) / (760 - 320)));
+    height: calc(269px + (310 - 269) * ((100vw - 320px) / (760 - 320)));
+  }
+}
+.footer__element{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: $color-primary;
+  &:hover{
+    @extend %transition;
+    color: $color-light-s;
+    img{
+      filter: invert(100%) sepia(0%) saturate(0%) brightness(2000%);
+    }
+  }
+  &:focus-visible{
+    outline: none;
+  }
+  &:focus{
+    outline: none;
+  }
+  h4{
+    @include font($size: 2.0rem, $height: 115%);
+  }
+}

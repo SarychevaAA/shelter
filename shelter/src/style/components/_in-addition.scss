@@ -1,0 +1,91 @@
+.in-addition {
+  color: $color-dark-l;
+  background: $color-light-l;
+
+  .wrapper {
+    padding: 80px 40px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    @include media-laptop-small {
+      flex-direction: column-reverse;
+      gap: 60px;
+      @include media-tablet-small {
+        gap: calc(42px + (60 - 42) * ((100vw - 320px) / (760 - 320)));
+        padding: calc(42px + (80 - 42) * ((100vw - 320px) / (760 - 320)))
+        calc(20px + (40 - 20) * ((100vw - 320px) / (760 - 320)))
+        calc(43px + (100 - 43) * ((100vw - 320px) / (760 - 320)))
+      }
+    }
+  }
+}
+
+.in-addition__content{
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include media-mobile{
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.in-addition__heading{
+  max-width: 300px;
+  @include media-mobile{
+    max-width: 226px;
+  }
+}
+
+.in-addition__subheading{
+  margin: 0;
+  @include font($size: 15px, $height: 110%, $spacing: 0.06em);
+  @include media-mobile{
+    @include font($size: 15px, $height: 160%, $spacing: 0em);
+  }
+}
+
+.in-addition__credit-card{
+  text-decoration: none;
+  margin: 0;
+  margin-top: -1.8px;
+  color: $color-dark-l;
+  background: $color-primary;
+  box-sizing: border-box;
+  width: 350px;
+  border-radius: 9px;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  &:hover{
+    background: $color-primary-light;
+  }
+  @include media-mobile{
+    width: auto;
+    gap: 14px;
+    //width:  calc(281px + (350 - 281) * ((100vw - 320px) / (414 - 320)));
+    //width: 60%;
+  }
+}
+
+.in-addition__legal-information{
+  @extend %font-add;
+  @include font($size: 12px, $height: 18px, $style: italic, $spacing: 0);
+  color: $color-dark-m;
+  margin: 0;
+  @include media-mobile{
+    text-align: justify;
+  }
+}
+
+.in-addition__img {
+  @include media-tablet-small {
+    width: calc(260px + (505 - 260) * ((100vw - 320px) / (760 - 320)));
+    height: calc(135.2px + (261 - 135.2) * ((100vw - 320px) / (760 - 320)));
+  }
+}

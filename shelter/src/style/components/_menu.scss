@@ -1,0 +1,78 @@
+.menu{
+  @extend %font-add;
+  @include font($size: 1.5rem, $height: 160%);
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+  align-items: center;
+  justify-content: space-between;
+  @include media-change-menu{
+    @include font($size: 3.2rem, $height: 160%);
+    width: 320px;
+    position: relative;
+    right: calc(-100% + 320px);
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 39px;
+    z-index: 5;
+    &_color-on-light-background{
+      background: $color-light-xl;
+    }
+    &_color-on-dark-background{
+      background: $color-dark-3xl;
+    }
+    }
+}
+
+.menu__element{
+  @extend %transition;
+  box-sizing: border-box;
+  text-decoration: none;
+  letter-spacing: 0.0038em;
+  &_color-on-dark-background{
+    color: $color-dark-s;
+    &:hover{
+      color: $color-light-s;
+    }
+  }
+  &_color-on-light-background{
+    color: $color-dark-l;
+    &:hover{
+      color: $color-dark-3xl;
+    }
+  }
+  &_active{
+    cursor: default;
+    border-bottom: 3px solid $color-primary;
+    &-color-on-dark-background{
+      color: $color-light-s;
+    }
+    &-color-on-light-background{
+      color: $color-dark-3xl;
+    }
+  }
+  @include media-change-menu{
+    &:nth-child(1){
+      margin-top: -10px;
+    }
+  }
+}
+
+.header__menu{
+  @extend %transition;
+  @include media-change-menu{
+    right: -320px;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    width: calc(100% + 320px);
+    height: 100vh;
+    z-index: 2;
+  }
+  &.active{
+    visibility: visible;
+    background: rgba(41, 41, 41, 0.6);
+    right: 0;
+  }
+}

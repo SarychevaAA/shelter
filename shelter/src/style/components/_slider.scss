@@ -1,0 +1,97 @@
+.slider{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  gap: 53px;
+  @include media-laptop-big {
+    gap: calc(12px + (53 - 12) * ((100vw - 768px)/(1180 - 768)));
+  }
+  @include media-between-tablet-mobile {
+    row-gap: 20px;
+    column-gap: 80px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.slider__button{
+  box-sizing: border-box;
+  display: flex;
+  border-radius: 50%;
+  font-weight: 900;
+  background: $color-light-l;
+  border: 2px solid $color-primary;
+  width: 52px;
+  height: 52px;
+  justify-content: center;
+  align-items: center;
+  img{
+    width: 14px;
+    height: 6px;
+  }
+  &_active{
+    &:hover{
+      @extend %transition;
+      background: $color-primary-light;
+      border-color: $color-primary-light;
+      cursor: pointer;
+    }
+  }
+  &_colored{
+    background: $color-primary;
+  }
+  &_not-active{
+    cursor: default;
+    color: #CDCDCD;
+    border-color: #CDCDCD;
+  }
+}
+.slider__button-block{
+  margin-top: -1px;
+  height: 52px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.list-cards{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.list-cards__element{
+  display: flex;
+  flex-direction: column;
+  gap: 31.5px;
+  align-items: center;
+  background: $color-light-s;
+  padding-bottom: 30px;
+  cursor: pointer;
+  img{
+    width: 270px;
+    height: 270px;
+  }
+  p{
+    margin: 0;
+    @include font($size: 2.0rem, $spacing: 0.06em);
+  }
+  .button{
+    width: 187px;
+    &_border{
+      border: 2px solid $color-primary;
+      background: $color-light-s;
+    }
+  }
+  &:hover{
+    @extend %transition;
+    box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+    background: $color-light-xl;
+    .button{
+      @extend %transition;
+      background: $color-primary-light;
+      border-color: $color-primary-light;
+    }
+  }
+}

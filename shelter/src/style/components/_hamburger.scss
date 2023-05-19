@@ -1,0 +1,69 @@
+%hamburger-line {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+}
+.hamburger_color-on-dark-background{
+  %hamburger-line-color{
+    background: $color-primary;
+  }
+  &:hover{
+    %hamburger-line-color{
+      background: $color-primary-light;
+    }
+  }
+}
+.hamburger_color-on-light-background{
+  %hamburger-line-color{
+    background: $color-dark-l;
+  }
+  &:hover{
+    %hamburger-line-color{
+      background: $color-dark-3xl;
+    }
+  }
+}
+
+.hamburger{
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  width: 30px;
+  height: 22px;
+  &::before {
+    @extend %hamburger-line;
+    @extend %hamburger-line-color;
+    @extend %transition;
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    @extend %hamburger-line;
+    @extend %hamburger-line-color;
+    @extend %transition;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.hamburger__line{
+  @extend %hamburger-line;
+  @extend %hamburger-line-color;
+  @extend %transition;
+  top: calc(50% - 1px);
+  left: 0;
+}
+
+.active{
+  &.hamburger::before{
+      transform: rotate(-90deg) translate(-10px, -11px);
+    }
+  &.hamburger::after{
+      transform: rotate(-90deg) translate(10px, 9px);
+    }
+  .hamburger__line{
+    transform: rotate(-90deg) translate(0, -1px);
+  }
+}

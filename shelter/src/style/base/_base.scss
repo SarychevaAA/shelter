@@ -1,0 +1,54 @@
+html{
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body{
+  @extend %font-prim;
+  @include font($size: 1.5rem, $height: 160%, $spacing: 0);
+  color: $color-dark-xl;
+  width: 100%;
+  background: $color-light-xl;
+  cursor: default;
+  overflow-x: hidden;
+  a:checked &{
+    opacity: 0%;
+    transition: opacity 5s ease-in 0.15s;
+  }
+}
+.scroll-hidden{
+  overflow: hidden;
+}
+a{
+  @extend %transition;
+}
+h1{
+  @include font($size: 4.4rem, $height: 130%, $spacing: 0);
+  margin: 0;
+  @include media-mobile{
+    @include font($size: 2.5rem, $height: 130%, $spacing: 0.06em);
+  }
+}
+
+h3{
+  @include font($size: 3.5rem, $height: 130%);
+  margin: 0;
+  @include media-mobile{
+    @include font($size: 2.5rem, $height: 130%, $spacing: 0.06em);
+  }
+}
+h4{
+  @include font($size: 2.0rem, $height: 115%);
+  margin: 0;
+  @include media-mobile{
+    @include font($size: 1.5rem, $height: 110%, $spacing: 0.06em);
+  }
+}
+
+h5{
+  @include font($size: 15px, $height: 17px, $spacing: 0.06em);
+  margin: 0;
+  @include media-laptop{
+    @include font($size: 1.3rem, $height: 110%, $spacing: 0.06em);
+  }
+
+}

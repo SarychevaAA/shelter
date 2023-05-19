@@ -1,0 +1,26 @@
+.our-friends{
+  background: $color-light-l;
+  .wrapper{
+    box-sizing: border-box;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    @include media-tablet-small{
+      gap: calc(42px + (60 - 42) * ((100vw - 320px)/(760 - 320)));
+      padding-top: calc(42px + (80 - 42) * ((100vw - 320px)/(760 - 320)));
+      padding-bottom: calc(42px + (100 - 42) * ((100vw - 320px)/(760 - 320)));
+    }
+  }
+}
+.our-friends__heading{
+  color: $color-dark-l;
+  max-width: 400px;
+  text-align: center;
+}
+
+.our-friends__button{
+  width: 261px;
+}

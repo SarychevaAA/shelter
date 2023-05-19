@@ -1,0 +1,74 @@
+.help{
+  color: $color-dark-l;
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    justify-content: center;
+    margin: 80px auto 100px;
+    @include media-tablet-small {
+      gap: calc(42px + (60 - 42) * ((100vw - 320px)/(760 - 320)));
+      padding: 0 calc(15px + (30 - 15) * ((100vw - 320px)/(760 - 320)));
+      margin-top: calc(42px + (80 - 42) * ((100vw - 320px)/(760 - 320)));
+      margin-bottom: calc(42px + (100 - 42) * ((100vw - 320px)/(760 - 320)));
+    }
+  }
+}
+
+.help__heading{
+  margin: 0 auto;
+  text-align: center;
+  max-width: 310px;
+  @include media-mobile{
+    max-width: 230px;
+  }
+}
+
+.help__list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 55px;
+  column-gap: 120px;
+  justify-content: center;
+  @include media-change-help-list{
+    column-gap: calc(60px + (120 - 60) * ((100vw - 768px)/(1001 - 768)));
+    row-gap: 55px;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 170px);
+  }
+  @include media-tablet{
+    column-gap: calc(30px + (60 - 30) * ((100vw - 320px)/(768 - 320)));
+  }
+  @include media-change-position-help-list{
+    row-gap: calc(30px + (55 - 30) * ((100vw - 320px)/(670 - 320)));
+    @include media-mobile{
+      grid-template-columns: auto auto;
+    }
+  }
+  @include media-mobile{
+    grid-template-columns: auto auto;
+  }
+}
+.list__element{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 30px;
+  @include media-change-help-list{
+    width: 170px;
+    @include media-mobile{
+      gap: calc(20px + (30 - 20) * ((100vw - 320px)/(414 - 320)));
+      width: calc(130px + (170 - 130) * ((100vw - 320px)/(414 - 320)));
+    }
+  }
+  img{
+    @include media-mobile{
+      width: calc(50px + (60 - 50) * ((100vw - 320px)/(414 - 320)));
+    }
+  }
+
+}

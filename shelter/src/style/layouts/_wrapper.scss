@@ -1,0 +1,12 @@
+.wrapper{
+  box-sizing: border-box;
+  max-width: 1280px;
+  padding: 0 40px;
+  margin: 0 auto;
+  @include media-content{
+    padding: 0 calc(30px + (40 - 30) * ((100vw - 768px)/(1280 - 768)));
+  }
+  @include media-tablet-small{
+    padding: 0 calc(10px + (30 - 10) * ((100vw - 320px)/(760 - 320)));
+  }
+}

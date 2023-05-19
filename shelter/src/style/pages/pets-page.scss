@@ -1,0 +1,52 @@
+.pets-page__friends{
+  .wrapper{
+    padding-top: 200px;
+    @include media-laptop-small{
+      gap: calc(30px + (60 - 30) * ((100vw - 768px)/(960 - 768)));
+      padding-bottom: calc(75px + (100 - 75) * ((100vw - 768px)/(960 - 768)));
+      @include media-tablet-small{
+        gap: calc(42px + (30 - 42) * ((100vw - 320px)/(760 - 320)));
+        padding-top: calc(162px + (200 - 162) * ((100vw - 320px)/(760 - 320)));
+        padding-bottom: calc(42px + (70 - 42) * ((100vw - 320px)/(760 - 320)));
+      }
+    }
+  }
+  .slider__button-block{
+    @include media-laptop-small{
+      margin-top: calc(9px + (-1 - 9) * ((100vw - 768px)/(960 - 768)));
+      @include media-tablet{
+        margin-top: calc(-1px + (9 + 1) * ((100vw - 320px)/(768 - 320)));
+      }
+    }
+    @include media-mobile{
+      gap: calc(10px + (20 - 10) * ((100vw - 320px)/(414 - 320)));
+    }
+  }
+}
+.pets-page__slider{
+  flex-wrap: wrap;
+}
+@keyframes show {
+  from { opacity: 0; transform: rotateY(90deg)}
+  to { opacity: 1; transform: rotateY(0deg)}
+}
+.pets-page__list-cards{
+  .list-cards__element{
+    animation: 0.8s show ease;
+  }
+  flex-wrap: wrap;
+  row-gap: 30px;
+  column-gap: 40px;
+  @include media-content{
+    justify-content: space-around;
+    height: 900px;
+    overflow: hidden;
+  }
+  @include media-laptop-small{
+    height: 100%;
+  }
+  @include media-tablet{
+    justify-content: center;
+    height: 1365px;
+  }
+}

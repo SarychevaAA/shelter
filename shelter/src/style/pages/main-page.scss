@@ -1,0 +1,96 @@
+.main-page__list-cards{
+  min-width: 100%;
+  margin: 0 calc((100% - 270px * 3) / 4);
+  @include media-change-carousel{
+    margin: 0 0px;
+    justify-content: space-around;
+  }
+  @include media-tablet-big{
+    justify-content: space-between;
+    @include media-tablet-small{
+      justify-content: center;
+    }
+  }
+
+  .list-cards__element {
+    width: 270px;
+    height: 435px;
+    &:nth-child(3) {
+      @include media-change-carousel {
+        display: none;
+      }
+    }
+    &:nth-child(2) {
+      @include media-tablet-small {
+        display: none;
+      }
+    }
+  }
+
+}
+
+
+.main-page__slider{
+  .slider__button{
+    @include media-between-tablet-mobile{
+      &:nth-child(1){
+        order: 2;
+      }
+      &:nth-child(3){
+        order: 3;
+      }
+    }
+  }
+
+  .carousel-wrapper {
+    width: 82.5%;
+    overflow: hidden;
+  }
+  .carousel {
+    display: flex;
+    position: relative;
+    left: calc(-100% - ((100% - 270px * 3) / 4) * 3);
+    @include media-change-carousel{
+      left: calc(-100% - 0px * 3);
+    }
+  }
+
+  @keyframes move-right-3 {
+    from {left: calc(-100% - ((100% - 270px * 3) / 4) * 3);}
+    to {left: calc((-100% - ((100% - 270px * 3) / 4) * 2.5) * 2);}
+  }
+
+  @keyframes move-right-2 {
+      from {left: calc(-100%);}
+      to {left: calc(((-100%) * 2));}
+  }
+
+  .transition-right {
+    animation-name: move-right-3;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    @include media-change-carousel{
+      animation-name: move-right-2;
+    }
+  }
+
+  @keyframes move-left-3 {
+    from {left: calc(-100% - ((100% - 270px * 3) / 4) * 3);}
+    to {left: calc(((-100% + 270px * 3) / 4));}
+  }
+
+  @keyframes move-left-2 {
+      from {left: calc(-100%);}
+      to {left: 0;}
+  }
+
+  .transition-left {
+    animation-name: move-left-3;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    @include media-change-carousel{
+      animation-name: move-left-2;
+    }
+  }
+}
+

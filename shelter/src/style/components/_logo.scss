@@ -1,0 +1,39 @@
+.logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  &_color-on-dark-background:hover{
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 1px 20px 1px rgba(255, 255, 255, 0.05);
+  }
+  &_color-on-light-background:hover{
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 20px 1px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.logo__title{
+  @include font($size: 32px, $height: 110%);
+  &_color-on-dark-background{
+    color: $color-primary;
+  }
+  &_color-on-light-background{
+    color: $color-dark-l;
+  }
+
+}
+
+.logo__subtitle{
+  @extend %font-add;
+  @include font($size: 13px, $spacing: 0.1em);
+  margin-top: 12px;
+  &_color-on-dark-background{
+    color: $color-light-xl;
+  }
+  &_color-on-light-background{
+    color: $color-dark-3xl;
+  }
+}
+
